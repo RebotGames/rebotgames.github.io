@@ -1,22 +1,30 @@
 ---
+const steamUrl = 'https://store.steampowered.com/app/4516640/Megabait/';
 ---
 <section class="game" id="megabait">
   <h2>Megabait</h2>
-  <img
-    class="screenshot"
-    src="/images/megabait-screenshot-placeholder.svg"
-    alt="Megabait screenshot placeholder"
-    width="800"
-    height="450"
-    loading="lazy"
-  />
+  <div class="capsules">
+    <img
+      class="capsule-horizontal"
+      src="/images/capsule_horizontal.jpg"
+      alt="Megabait"
+      width="460"
+      height="215"
+      loading="lazy"
+    />
+    <img
+      class="capsule-vertical"
+      src="/images/capsule_vertical.jpg"
+      alt="Megabait"
+      loading="lazy"
+    />
+  </div>
   <p>
-    Megabait is our current game in development. Description, trailer, and
-    screenshots are on the way — check back soon.
+    Megabait is our current game in development. More details, trailer, and
+    screenshots are on the way — wishlist it on Steam to follow along.
   </p>
   <div class="links">
-    <span class="store-link disabled" aria-disabled="true">Steam — coming soon</span>
-    <span class="store-link disabled" aria-disabled="true">itch.io — coming soon</span>
+    <a class="store-link" href={steamUrl} target="_blank" rel="noopener noreferrer">Wishlist on Steam</a>
   </div>
 </section>
 
@@ -30,11 +38,25 @@
   h2 {
     margin-bottom: 1rem;
   }
-  .screenshot {
+  .capsules {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+  }
+  .capsule-horizontal {
     width: 100%;
+    max-width: 460px;
     height: auto;
     border-radius: 8px;
-    margin-bottom: 1.25rem;
+  }
+  .capsule-vertical {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
   }
   p {
     color: var(--color-muted);
@@ -53,10 +75,9 @@
     border-radius: 6px;
     border: 1px solid var(--color-border);
     font-size: 0.95rem;
+    color: var(--color-accent);
   }
-  .store-link.disabled {
-    color: var(--color-muted);
-    cursor: default;
-    opacity: 0.7;
+  .store-link:hover {
+    border-color: var(--color-accent);
   }
 </style>
