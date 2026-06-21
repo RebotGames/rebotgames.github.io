@@ -1,0 +1,62 @@
+---
+---
+<section class="game" id="megabait">
+  <h2>Megabait</h2>
+  <img
+    class="screenshot"
+    src="/images/megabait-screenshot-placeholder.svg"
+    alt="Megabait screenshot placeholder"
+    width="800"
+    height="450"
+    loading="lazy"
+  />
+  <p>
+    Megabait is our current game in development. Description, trailer, and
+    screenshots are on the way — check back soon.
+  </p>
+  <div class="links">
+    <span class="store-link disabled" aria-disabled="true">Steam — coming soon</span>
+    <span class="store-link disabled" aria-disabled="true">itch.io — coming soon</span>
+  </div>
+</section>
+
+<style>
+  .game {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+    text-align: center;
+  }
+  h2 {
+    margin-bottom: 1rem;
+  }
+  .screenshot {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.25rem;
+  }
+  p {
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  .links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .store-link {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    border: 1px solid var(--color-border);
+    font-size: 0.95rem;
+  }
+  .store-link.disabled {
+    color: var(--color-muted);
+    cursor: default;
+    opacity: 0.7;
+  }
+</style>

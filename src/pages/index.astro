@@ -1,0 +1,57 @@
+---
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import GameSection from '../components/GameSection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="RebotGames is a small independent game studio currently building Megabait." />
+		<title>RebotGames — Megabait</title>
+	</head>
+	<body>
+		<Hero />
+		<main>
+			<About />
+			<GameSection />
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--color-bg: #0b1014;
+		--color-fg: #f1f5f9;
+		--color-muted: #94a3b8;
+		--color-border: #1f2933;
+		--color-accent: #7fffd4;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		background: var(--color-bg);
+		color: var(--color-fg);
+		font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	}
+
+	a {
+		color: var(--color-accent);
+		text-decoration: none;
+	}
+</style>
