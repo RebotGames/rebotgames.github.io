@@ -3,22 +3,14 @@ const steamUrl = 'https://store.steampowered.com/app/4516640/Megabait/';
 ---
 <section class="game" id="megabait">
   <h2>Megabait</h2>
-  <div class="capsules">
-    <img
-      class="capsule-horizontal"
-      src="/images/capsule_horizontal.jpg"
-      alt="Megabait"
-      width="460"
-      height="215"
-      loading="lazy"
-    />
-    <img
-      class="capsule-vertical"
-      src="/images/capsule_vertical.jpg"
-      alt="Megabait"
-      loading="lazy"
-    />
-  </div>
+  <img
+    class="capsule"
+    src="/images/capsule_horizontal.jpg"
+    alt="Megabait"
+    width="616"
+    height="353"
+    loading="lazy"
+  />
   <p>
     A brutal top-down obstacle course where every second counts. Master
     precise movement to survive deadly hazard rooms, leave a bloody trail of
@@ -28,6 +20,18 @@ const steamUrl = 'https://store.steampowered.com/app/4516640/Megabait/';
   <div class="links">
     <a class="store-link" href={steamUrl} target="_blank" rel="noopener noreferrer">Wishlist on Steam</a>
   </div>
+  <video
+    class="gameplay-clip"
+    src="/videos/megabait-gameplay.webm"
+    poster="/images/capsule_horizontal.jpg"
+    width="640"
+    height="360"
+    autoplay
+    loop
+    muted
+    playsinline
+  >
+  </video>
 </section>
 
 <style>
@@ -40,36 +44,30 @@ const steamUrl = 'https://store.steampowered.com/app/4516640/Megabait/';
   h2 {
     margin-bottom: 1rem;
   }
-  .capsules {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.25rem;
-  }
-  .capsule-horizontal {
+  .capsule {
     width: 100%;
     max-width: 460px;
     height: auto;
     border-radius: 8px;
-  }
-  .capsule-vertical {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    border-radius: 8px;
+    margin-bottom: 1.25rem;
   }
   p {
     color: var(--color-muted);
     line-height: 1.6;
     margin-bottom: 1.5rem;
   }
+  .gameplay-clip {
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    border-radius: 8px;
+  }
   .links {
     display: flex;
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+    margin-bottom: 1.5rem;
   }
   .store-link {
     display: inline-block;
