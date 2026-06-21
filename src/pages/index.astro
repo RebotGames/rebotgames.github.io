@@ -8,12 +8,24 @@ import Footer from '../components/Footer.astro';
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+		<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content="RebotGames is a small independent game studio currently building Megabait." />
 		<title>RebotGames — Megabait</title>
+
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://rebotgames.com/" />
+		<meta property="og:title" content="RebotGames — Megabait" />
+		<meta property="og:description" content="A brutal top-down obstacle course where every second counts. Survive deadly hazard rooms, leave a bloody trail of your past mistakes, and uncover every secret on your path to 100% completion." />
+		<meta property="og:image" content="https://rebotgames.com/images/capsule_horizontal.jpg" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="RebotGames — Megabait" />
+		<meta name="twitter:description" content="A brutal top-down obstacle course where every second counts." />
+		<meta name="twitter:image" content="https://rebotgames.com/images/capsule_horizontal.jpg" />
 	</head>
 	<body>
 		<Hero />
