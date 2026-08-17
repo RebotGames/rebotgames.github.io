@@ -1,0 +1,207 @@
+---
+// DRAFT privacy policy — review (ideally with legal counsel) before relying on it.
+// Content reflects exactly what the Megabait analytics system collects as of the
+// effective date below. Update the effective date and controller details as needed.
+import Footer from '../components/Footer.astro';
+
+const effectiveDate = 'August 17, 2026';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+		<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Privacy policy for Megabait and RebotGames — what optional gameplay data we collect, why, and how to control it." />
+		<title>Privacy Policy — RebotGames</title>
+	</head>
+	<body>
+		<main class="policy">
+			<p class="back"><a href="/">&larr; RebotGames</a></p>
+
+			<h1>Privacy Policy</h1>
+			<p class="effective">Effective {effectiveDate}</p>
+
+			<p>
+				This policy explains the optional gameplay data our game <strong>Megabait</strong>
+				collects, why we collect it, and the choices you have. We keep data collection
+				minimal and only use it to make the game better.
+			</p>
+
+			<h2>Who we are</h2>
+			<p>
+				Megabait is developed by <strong>RebotGames</strong> ("we", "us"), the data
+				controller for the data described here. You can reach us at
+				<a href="mailto:hello@rebotgames.com">hello@rebotgames.com</a> for any privacy
+				question or request.
+			</p>
+
+			<h2>Analytics are optional and off by default</h2>
+			<p>
+				When you first launch Megabait, we ask whether you want to share gameplay
+				analytics. <strong>Nothing is collected unless you choose "Allow."</strong> You
+				can change your mind at any time from the in-game <em>Settings</em> menu, and no
+				data is collected while running the game from the development editor.
+			</p>
+
+			<h2>What we collect (only if you allow it)</h2>
+			<ul>
+				<li>Your <strong>Steam ID</strong> as a player identifier when you play through
+					Steam. This lets us group your sessions together.</li>
+				<li>Your <strong>country</strong>, at 2-letter level only (for example "ES" or
+					"US"). Steam derives this from your IP address and gives us only the country
+					code. <strong>We never receive or store your IP address</strong>, and we do
+					not collect your region or city.</li>
+				<li>Basic technical context: <strong>platform</strong> (Windows, Linux, or
+					macOS) and the <strong>game version</strong> you are playing.</li>
+				<li><strong>Gameplay events</strong>: which levels you start and finish, how many
+					attempts and how long they take, and the in-level positions where your
+					character dies together with the hazard that caused it.</li>
+			</ul>
+
+			<h2>Why we collect it</h2>
+			<p>
+				Solely to improve the game. Balancing difficulty, finding levels or hazards that
+				are unfair or frustrating, and understanding where our players are. We do
+				<strong>not</strong> use this data for advertising or profiling, and we do not
+				sell or share it.
+			</p>
+			<p>
+				Our legal basis under the GDPR is your <strong>consent</strong>, which you give
+				through the first-run prompt and can withdraw at any time inside the in-game settings. Withdrawing
+				consent stops any further collection.
+			</p>
+
+			<h2>What we do not collect</h2>
+			<p>
+				We do not collect your name, email address, payment details, or any "special
+				category" data (such as data revealing health, ethnicity, religion, or political
+				views). Purchases are handled entirely by Steam; we never see your payment
+				information.
+			</p>
+
+			<h2>Where your data is stored</h2>
+			<p>
+				Analytics data is stored using <strong>Supabase</strong>, our database provider,
+				which processes it on our behalf. Your Steam ID and gameplay come to us through
+				<strong>Valve's Steam</strong> platform, whose own
+				<a href="https://store.steampowered.com/privacy_agreement/" target="_blank" rel="noopener noreferrer">privacy policy</a>
+				governs your use of Steam itself.
+			</p>
+
+			<h2>How long we keep it</h2>
+			<p>
+				We keep analytics data only as long as it is useful for improving the game and
+				remove old data periodically. You can also ask us to delete your data at any time
+				(see below).
+			</p>
+
+			<h2>Your rights</h2>
+			<p>
+				You can withdraw consent at any time by turning analytics off in the in-game
+				Settings menu. You may also ask us to give you a copy of, or to delete, the data
+				associated with your player identifier by emailing
+				<a href="mailto:hello@rebotgames.com">hello@rebotgames.com</a>. Depending on where
+				you live, you may have additional rights under laws such as the GDPR, including
+				the right to lodge a complaint with your local data protection authority.
+			</p>
+
+			<h2>Children</h2>
+			<p>
+				Megabait is not directed at children, and we do not knowingly collect data from
+				children. If you believe a child has provided us data, contact us and we will
+				delete it.
+			</p>
+
+			<h2>Changes to this policy</h2>
+			<p>
+				We may update this policy as the game evolves. Material changes will be reflected
+				here with an updated effective date.
+			</p>
+
+			<h2>Contact</h2>
+			<p>
+				Questions or requests: <a href="mailto:hello@rebotgames.com">hello@rebotgames.com</a>.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--color-bg: #0b1014;
+		--color-fg: #f1f5f9;
+		--color-muted: #94a3b8;
+		--color-border: #1f2933;
+		--color-accent: #7fffd4;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		background: var(--color-bg);
+		color: var(--color-fg);
+		font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	}
+
+	a {
+		color: var(--color-accent);
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+</style>
+
+<style>
+	.policy {
+		max-width: 46rem;
+		margin: 0 auto;
+		padding: 3rem 1.5rem 1rem;
+		line-height: 1.65;
+	}
+
+	.back a {
+		color: var(--color-muted);
+		font-size: 0.9rem;
+	}
+
+	h1 {
+		margin: 1rem 0 0.25rem;
+		font-size: 2rem;
+	}
+
+	.effective {
+		color: var(--color-muted);
+		font-size: 0.9rem;
+		margin-top: 0;
+	}
+
+	h2 {
+		margin-top: 2.25rem;
+		font-size: 1.2rem;
+		border-bottom: 1px solid var(--color-border);
+		padding-bottom: 0.35rem;
+	}
+
+	ul {
+		padding-left: 1.25rem;
+	}
+
+	li {
+		margin-bottom: 0.5rem;
+	}
+</style>
