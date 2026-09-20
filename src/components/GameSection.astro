@@ -11,6 +11,20 @@ const steamUrl = 'https://store.steampowered.com/app/4516640/Megabait/';
     height="353"
     loading="lazy"
   />
+  <video
+    class="roster-clip"
+    poster="/images/megabait-roster-idle.jpg"
+    width="662"
+    height="308"
+    autoplay
+    loop
+    muted
+    playsinline
+    aria-label="The Megabait characters in their idle poses"
+  >
+    <source src="/videos/megabait-roster-idle.webm" type="video/webm" />
+    <source src="/videos/megabait-roster-idle.mp4" type="video/mp4" />
+  </video>
   <p>
     A brutal top-down obstacle course where every second counts. Master
     precise movement to survive deadly hazard rooms, leave a bloody trail of
@@ -18,21 +32,51 @@ const steamUrl = 'https://store.steampowered.com/app/4516640/Megabait/';
     completion.
   </p>
   <div class="links">
-    <a class="store-link" href={steamUrl} target="_blank" rel="noopener noreferrer">Wishlist on Steam</a>
+    <a class="store-link" href={steamUrl} target="_blank" rel="noopener">Wishlist on Steam</a>
   </div>
   <video
     class="gameplay-clip"
-    src="/videos/megabait-gameplay.webm"
-    poster="/images/capsule_horizontal.jpg"
-    width="640"
-    height="360"
+    poster="/images/megabait-character-abilities.jpg"
+    width="1170"
+    height="658"
     autoplay
     loop
     muted
     playsinline
+    aria-label="Each character has a unique ability that changes how a level is played"
   >
+    <source src="/videos/megabait-character-abilities.webm" type="video/webm" />
+    <source src="/videos/megabait-character-abilities.mp4" type="video/mp4" />
   </video>
 </section>
+
+<script>
+  // Press emails link here carrying utm_* params. Forward them onto the Steam
+  // link so a visit that arrives through the site is still attributed to the
+  // outlet in Steamworks. utm_medium is overridden to "website" so this path
+  // stays distinguishable from the Steam link clicked directly in the email.
+  const inbound = new URLSearchParams(window.location.search);
+
+  if (inbound.has('utm_source')) {
+    const forwarded = new URLSearchParams();
+
+    for (const key of ['utm_source', 'utm_campaign', 'utm_content', 'utm_term']) {
+      const value = inbound.get(key);
+      if (value) forwarded.set(key, value);
+    }
+    forwarded.set('utm_medium', 'website');
+
+    const storeLinks = document.querySelectorAll<HTMLAnchorElement>(
+      'a[href*="store.steampowered.com"]',
+    );
+
+    for (const link of storeLinks) {
+      const url = new URL(link.href);
+      for (const [key, value] of forwarded) url.searchParams.set(key, value);
+      link.href = url.toString();
+    }
+  }
+</script>
 
 <style>
   .game {
@@ -55,6 +99,12 @@ const steamUrl = 'https://store.steampowered.com/app/4516640/Megabait/';
     color: var(--color-muted);
     line-height: 1.6;
     margin-bottom: 1.5rem;
+  }
+  .roster-clip {
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    margin-bottom: 1.25rem;
   }
   .gameplay-clip {
     width: 100%;
